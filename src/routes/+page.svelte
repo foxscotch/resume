@@ -1,2 +1,36 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import Experience from '$lib/components/Experience.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Project from '$lib/components/Project.svelte';
+	import Skill from '$lib/components/Skill.svelte';
+	import type { PageProps } from './$types';
+	let { data: resume }: PageProps = $props();
+</script>
+
+<Header contact={resume.contact} />
+
+<h3>Experience</h3>
+{#each resume.experience.toReversed() as experience (experience.begin)}
+	<Experience {experience} />
+{/each}
+
+<h3>Projects</h3>
+<ul>
+	{#each resume.projects as project (project)}
+		<Project {project} />
+	{/each}
+</ul>
+
+<h3>Skills</h3>
+{#each Object.entries(resume.skills) as [skill, body] (skill)}
+	<Skill {skill} {body} />
+{/each}
+
+<style>
+	h3 {
+		margin-top: 1em;
+		padding-bottom: 0.25em;
+		color: var(--pink-darker);
+		border-bottom: 2px solid var(--pink-darker);
+	}
+</style>

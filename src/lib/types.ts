@@ -4,6 +4,7 @@ type MarkdownString = string;
 export type Contact = {
 	name: string;
 	title: string;
+	location: string;
 	phone: string;
 	email: string;
 };
@@ -13,8 +14,8 @@ export type Experience = {
 	title: string;
 	type: string;
 	location: string;
-	begin: string; // ISO 8601 date-only
-	end: string; // ISO 8601 date-only
+	begin: Date; // express as ISO 8601 string, only the date is necessary
+	end: Date; // ^ same
 	entityDescription: MarkdownString;
 	positionOverview: MarkdownString;
 	departureReason: string;
@@ -23,7 +24,7 @@ export type Experience = {
 
 export type Project = MarkdownString;
 
-export type Skill = {
+export type Skills = {
 	[heading: string]: MarkdownString; // heading will be included verbatim
 };
 
@@ -32,5 +33,5 @@ export type Resume = {
 	contact: Contact;
 	experience: Experience[];
 	projects: Project[];
-	skills: Skill[];
+	skills: Skills;
 };
