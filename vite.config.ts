@@ -1,7 +1,8 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import ViteYaml from '@modyfi/vite-plugin-yaml';
+import pdfPlugin from './pdf-plugin.ts';
 
 export default defineConfig({
 	plugins: [
@@ -18,6 +19,7 @@ export default defineConfig({
 			adapter: adapter(),
 			extensions: ['.svelte', '.svx', '.md']
 		}),
-		ViteYaml()
+		ViteYaml(),
+		pdfPlugin()
 	]
 });
