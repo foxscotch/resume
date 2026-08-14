@@ -26,7 +26,7 @@ vite.config.ts.timestamp-*
 static/webfonts/
 
 # Resume data
-src/lib/resume.yaml
+src/lib/resume*.yaml
 
 # Resume output
 *.pdf

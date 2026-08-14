@@ -39,6 +39,7 @@
 	:global {
 		body {
 			padding: 1em;
+			font-size: 14px;
 			text-align: left;
 			color: var(--text);
 			background-color: var(--wallpaper);
@@ -53,8 +54,8 @@
 		/* Adapted from MDN content: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr#example */
 		hr {
 			border: none;
-			border-top: 0.2em solid var(--primary-hl);
-			color: var(--primary-hl);
+			border-top: 0.2em solid var(--pink-darker);
+			color: var(--pink-darker);
 			overflow: visible;
 			text-align: center;
 			height: 0px;
@@ -67,7 +68,7 @@
 			content: '✦';
 			padding: 0 12px;
 			position: relative;
-			top: -16px;
+			top: -11px;
 		}
 		/* End MDN content */
 
@@ -97,6 +98,7 @@
 
 		p {
 			margin: 1em auto 1em;
+			line-height: 1.2em;
 		}
 
 		a {
@@ -116,6 +118,20 @@
 		ul > li {
 			padding-left: 0.5em;
 			line-height: 1.2em;
+		}
+
+		@media print {
+			@page {
+				margin: 0.4in;
+				size: letter;
+
+				@bottom-center {
+					content: 'Page ' counter(page) ' of ' counter(pages);
+					font-size: 12px;
+					font-style: italic;
+					color: rgba(0, 0, 0, 0.5);
+				}
+			}
 		}
 	}
 </style>

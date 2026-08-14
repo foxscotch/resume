@@ -1,6 +1,3 @@
-/** Type alias indicating that a string may contain markdown. */
-type MarkdownString = string;
-
 export type Contact = {
 	name: string;
 	title: string;
@@ -16,22 +13,20 @@ export type Experience = {
 	location: string;
 	begin: Date; // express as ISO 8601 string, only the date is necessary
 	end: Date; // ^ same
-	entityDescription: MarkdownString;
-	positionOverview: MarkdownString;
+	entityDescription: string;
+	positionOverview: string;
 	departureReason: string;
-	points: MarkdownString[];
+	points: string[];
 };
 
-export type Project = MarkdownString;
-
 export type Skills = {
-	[heading: string]: MarkdownString; // heading will be included verbatim
+	[heading: string]: string; // heading will be included verbatim
 };
 
 /** If your YAML file doesn't match this schema, u may encounter Problems. */
 export type Resume = {
+	anonymize: boolean; // whether to anonymize the resume, for sharing/previewing/etc
 	contact: Contact;
 	experience: Experience[];
-	projects: Project[];
 	skills: Skills;
 };

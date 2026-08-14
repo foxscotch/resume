@@ -15,6 +15,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@faker-js/faker": "^10.5.0",
 		"@modyfi/vite-plugin-yaml": "^1.1.1",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/adapter-static": "^3.0.10",

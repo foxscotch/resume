@@ -1,18 +1,23 @@
 <script lang="ts">
-	let { skill, body }: { skill: string; body: string } = $props();
+	import { faker } from '@faker-js/faker';
+
+	let { skill, body, anonymize }: { skill: string; body: string; anonymize: boolean } = $props();
 </script>
 
-<h4>{skill}</h4>
-<p>{body}</p>
+<p><em>{skill}</em>: {anonymize ? faker.lorem.paragraph() : body}</p>
 
 <style>
-	h4 {
-		margin-top: 0.75em;
-		margin-bottom: 0.25em;
-		font-weight: bold;
+	p {
+		margin: 0.35em 0 0.35em;
+		text-indent: 2em hanging;
+		break-inside: avoid;
 	}
 
-	p {
-		margin-top: 0.25em;
+	p:first-of-type {
+		margin-top: 1em;
+	}
+
+	em {
+		font-weight: bold;
 	}
 </style>
