@@ -6,18 +6,18 @@
 	let { data: resume }: PageProps = $props();
 </script>
 
-<Header contact={resume.contact} anonymize={resume.anonymize} />
+<Header contact={resume.contact} />
 
 <hr />
 
 <h3>Experience</h3>
 {#each resume.experience.toReversed() as experience (experience.begin)}
-	<Experience {experience} anonymize={resume.anonymize} />
+	<Experience {experience} />
 {/each}
 
 <h3>Skills</h3>
 {#each Object.entries(resume.skills) as [skill, body] (skill)}
-	<Skill {skill} {body} anonymize={resume.anonymize} />
+	<Skill {skill} {body} />
 {/each}
 
 <style>

@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { faker } from '@faker-js/faker';
-
-	let { skill, body, anonymize }: { skill: string; body: string; anonymize: boolean } = $props();
+	let { skill, body }: { skill: string; body: string } = $props();
 </script>
 
-<p><em>{skill}</em>: {anonymize ? faker.lorem.paragraph() : body}</p>
+<p><em>{skill}</em>: {body}</p>
 
 <style>
 	p {

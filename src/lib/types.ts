@@ -25,7 +25,6 @@ export type Skills = {
 
 /** If your YAML file doesn't match this schema, u may encounter Problems. */
 export type Resume = {
-	anonymize: boolean; // whether to anonymize the resume, for sharing/previewing/etc
 	contact: Contact;
 	experience: Experience[];
 	skills: Skills;
