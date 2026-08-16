@@ -34,6 +34,7 @@
 	.heading {
 		display: flex;
 		justify-content: space-between;
+		break-inside: avoid;
 		break-after: avoid;
 	}
 
