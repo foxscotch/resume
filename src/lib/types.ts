@@ -9,7 +9,7 @@ export type Contact = {
 export type Experience = {
 	entity: string;
 	title: string;
-	type: string;
+	group: string; // used for separating some positions into their own groups. will be used as the heading for the group
 	location: string;
 	begin: Date; // express as ISO 8601 string, only the date is necessary
 	end: Date; // ^ same
