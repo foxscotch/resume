@@ -98,7 +98,7 @@
 
 		p {
 			margin: 1em auto 1em;
-			line-height: 1.2em;
+			line-height: 1.3em;
 		}
 
 		a {

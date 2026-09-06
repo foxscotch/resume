@@ -8,7 +8,7 @@ export default async function pdfPlugin(): Promise<Plugin> {
 
 	async function renderPdf() {
 		await page.reload();
-		await page.pdf({ path: './resume.pdf' });
+		await page.pdf({ path: './out/resume.pdf' });
 	}
 
 	return {
