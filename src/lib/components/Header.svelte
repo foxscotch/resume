@@ -8,8 +8,6 @@
 	<h1>{contact.name}</h1>
 	<h2>{contact.title}</h2>
 	<p>
-		<span>{contact.location}</span>
-		⬥
 		<span>{contact.phone}</span>
 		⬥
 		<span>
@@ -17,6 +15,8 @@
 				{contact.email}
 			</a>
 		</span>
+		⬥
+		<span><a rel="external" href={contact.linkedin}>LinkedIn</a></span>
 	</p>
 </div>
 
