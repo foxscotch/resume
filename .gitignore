@@ -28,5 +28,6 @@ static/webfonts/
 # Resume data
 src/lib/resume*.yaml
 
-# Resume output
-*.pdf
+# Input/output
+in/
+out/
