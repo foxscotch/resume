@@ -26,6 +26,14 @@
 
 <hr />
 
+<h3>Highlights</h3>
+
+<ul class="highlights">
+	{#each resume.highlights as highlight (highlight)}
+		<li>{@html mdnop(highlight)}</li>
+	{/each}
+</ul>
+
 {#each Object.entries(groups) as [group, experience] (group)}
 	<h3>{group}</h3>
 	{#each experience.toReversed() as exp (exp.begin)}
@@ -47,5 +55,9 @@
 	h3 {
 		margin-top: 1em;
 		color: var(--pink-darker);
+	}
+
+	.highlights {
+		margin-top: 1em;
 	}
 </style>

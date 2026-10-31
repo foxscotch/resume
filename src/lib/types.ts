@@ -29,6 +29,7 @@ export type Skills = {
 /** If your YAML file doesn't match this schema, u may encounter Problems. */
 export type Resume = {
 	contact: Contact;
+	highlights: MarkdownString[];
 	experience: Experience[];
 	skills: Skills;
 };
