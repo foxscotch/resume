@@ -1,3 +1,5 @@
+type MarkdownString = string; // type for strings that can contain markdown
+
 export type Contact = {
 	name: string;
 	title: string;
@@ -16,10 +18,11 @@ export type Experience = {
 	entityDescription: string;
 	positionOverview: string;
 	departureReason: string;
-	points: string[];
+	points: MarkdownString[];
 };
 
 export type Skills = {
+	_preamble: MarkdownString; // shown before skills, outside of the list, as an intro
 	[heading: string]: string; // heading will be included verbatim
 };
 

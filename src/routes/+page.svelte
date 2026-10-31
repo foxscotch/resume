@@ -2,6 +2,7 @@
 	import Experience from '$lib/components/Experience.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import Skill from '$lib/components/Skill.svelte';
+	import { md, mdnop } from '$lib/markdown';
 	import type { Experience as ExperienceType } from '$lib/types';
 	import type { PageProps } from './$types';
 	let { data: resume }: PageProps = $props();
@@ -33,7 +34,12 @@
 {/each}
 
 <h3>Skills</h3>
-{#each Object.entries(resume.skills) as [skill, body] (skill)}
+
+<p>
+	{@html md(resume.skills._preamble)}
+</p>
+
+{#each Object.entries(resume.skills).filter(([skill]) => !skill.startsWith('_')) as [skill, body] (skill)}
 	<Skill {skill} {body} />
 {/each}
 

@@ -101,6 +101,16 @@
 			line-height: 1.3em;
 		}
 
+		b,
+		strong {
+			font-weight: bold;
+		}
+
+		i,
+		em {
+			font-style: italic;
+		}
+
 		a {
 			color: var(--primary-hl);
 			text-decoration: none;

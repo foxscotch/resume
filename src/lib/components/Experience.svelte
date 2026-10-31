@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { mdnop } from '$lib/markdown';
 	import type { Experience } from '$lib/types';
 
 	const formatDate = new Intl.DateTimeFormat('en-US', {
@@ -26,7 +27,7 @@
 
 <ul>
 	{#each experience.points as point (point)}
-		<li>{point}</li>
+		<li>{@html mdnop(point)}</li>
 	{/each}
 </ul>
 
