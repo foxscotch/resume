@@ -15,8 +15,10 @@
 				{contact.email}
 			</a>
 		</span>
-		⬥
-		<span><a rel="external" href={contact.linkedin}>LinkedIn</a></span>
+		{#if contact.linkedin}
+			⬥
+			<span><a rel="external" href={contact.linkedin}>LinkedIn</a></span>
+		{/if}
 	</p>
 </div>
 
